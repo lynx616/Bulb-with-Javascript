@@ -14,15 +14,27 @@
 <body>
     <div class="bulb-before"> 
         <button id="ok-btn">
-        OK
+        ON
     </button>
     <script>
-      var  bulbon=document.querySelector(".bulb-before");
+      var bulb=document.querySelector(".bulb-before");
+      var btn=document.querySelector("#ok-btn");
+      var flag =0;
+        btn.addEventListener("click",()=>{
+            if(flag%2==0){
+                bulb.style.backgroundImage="url('after.png')";
+                btn.innerHTML="OFF";
+                flag++;
+            }
+            else{
+            bulb.style.backgroundImage="url('before.png')";
+            btn.innerHTML="ON";
+            flag++;
+            }
+        })
 
-        bulbon.onclick=function(){
-            bulbon.style="background-image: url(after.png)";
 
-        }
+    
 
     </script>
 </div>
